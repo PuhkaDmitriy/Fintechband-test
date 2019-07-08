@@ -15,7 +15,6 @@
 		6CF6C00422D346BB00116DE9 /* TokenInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF6C00322D346BB00116DE9 /* TokenInput.storyboard */; };
 		6CF6C00622D346CD00116DE9 /* StatementDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF6C00522D346CD00116DE9 /* StatementDetail.storyboard */; };
 		6CF6C00822D346D800116DE9 /* StatementList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF6C00722D346D800116DE9 /* StatementList.storyboard */; };
-		6CF6C00C22D347AD00116DE9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C00B22D347AD00116DE9 /* Coordinator.swift */; };
 		6CF6C01022D348AB00116DE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C00F22D348AB00116DE9 /* Constants.swift */; };
 		6CF6C01222D349F100116DE9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C01122D349F100116DE9 /* BaseViewController.swift */; };
 		6CF6C01422D34A2B00116DE9 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C01322D34A2B00116DE9 /* StoryboardInitializable.swift */; };
@@ -42,6 +41,7 @@
 		6CF6C04322D37C3100116DE9 /* Currencyes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C04222D37C3100116DE9 /* Currencyes.swift */; };
 		6CF6C04722D37FC100116DE9 /* StatementDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C04622D37FC100116DE9 /* StatementDetailTableViewCell.swift */; };
 		6CF6C04922D381AA00116DE9 /* StatementItem+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C04822D381AA00116DE9 /* StatementItem+Extra.swift */; };
+		6CF6C04B22D38D4300116DE9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C04A22D38D4300116DE9 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,6 @@
 		6CF6C00322D346BB00116DE9 /* TokenInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TokenInput.storyboard; sourceTree = "<group>"; };
 		6CF6C00522D346CD00116DE9 /* StatementDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatementDetail.storyboard; sourceTree = "<group>"; };
 		6CF6C00722D346D800116DE9 /* StatementList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatementList.storyboard; sourceTree = "<group>"; };
-		6CF6C00B22D347AD00116DE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6CF6C00F22D348AB00116DE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6CF6C01122D349F100116DE9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6CF6C01322D34A2B00116DE9 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		6CF6C04222D37C3100116DE9 /* Currencyes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencyes.swift; sourceTree = "<group>"; };
 		6CF6C04622D37FC100116DE9 /* StatementDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementDetailTableViewCell.swift; sourceTree = "<group>"; };
 		6CF6C04822D381AA00116DE9 /* StatementItem+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementItem+Extra.swift"; sourceTree = "<group>"; };
+		6CF6C04A22D38D4300116DE9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8E1C2F4BA3DD44EEAE835B73 /* Pods-Fintechband test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fintechband test.release.xcconfig"; path = "Target Support Files/Pods-Fintechband test/Pods-Fintechband test.release.xcconfig"; sourceTree = "<group>"; };
 		D692EDC8DCCD1B2159B6663A /* Pods-Fintechband test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fintechband test.debug.xcconfig"; path = "Target Support Files/Pods-Fintechband test/Pods-Fintechband test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,7 +257,7 @@
 		6CF6C00A22D3479900116DE9 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				6CF6C00B22D347AD00116DE9 /* Coordinator.swift */,
+				6CF6C04A22D38D4300116DE9 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -396,6 +396,7 @@
 				6CF6C01822D34A6E00116DE9 /* TokenInputViewModel.swift in Sources */,
 				6CF6C01022D348AB00116DE9 /* Constants.swift in Sources */,
 				6CF6C03222D3580200116DE9 /* StatementListViewModel.swift in Sources */,
+				6CF6C04B22D38D4300116DE9 /* AppCoordinator.swift in Sources */,
 				6CF6C02622D34EC800116DE9 /* UIViewController+Extra.swift in Sources */,
 				6CF6C03622D35B0500116DE9 /* StatementItemDetailViewModel.swift in Sources */,
 				6CF6C02E22D3580200116DE9 /* StatementTableViewCell.swift in Sources */,
@@ -412,7 +413,6 @@
 				6CF6BFE822D33B3700116DE9 /* AppDelegate.swift in Sources */,
 				6CF6C02422D34D4300116DE9 /* StatementItem.swift in Sources */,
 				6CF6C01A22D34A6E00116DE9 /* TokenInputViewController.swift in Sources */,
-				6CF6C00C22D347AD00116DE9 /* Coordinator.swift in Sources */,
 				6CF6C01D22D34CEB00116DE9 /* ReadOnce.swift in Sources */,
 				6CF6C04922D381AA00116DE9 /* StatementItem+Extra.swift in Sources */,
 				6CF6C01222D349F100116DE9 /* BaseViewController.swift in Sources */,

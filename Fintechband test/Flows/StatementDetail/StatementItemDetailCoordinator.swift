@@ -9,22 +9,21 @@
 import UIKit
 import RxSwift
 
-class StatementItemDetailCoordinator: Coordinator {
+class StatementItemDetailCoordinator {
 
     let statementItem: StatementItem
-    var rootViewController: UINavigationController
+    var rootViewController: UIViewController!
 
-    init(rootViewController: UINavigationController, statementItem: StatementItem) {
-        self.rootViewController = rootViewController
+    init(statementItem: StatementItem) {
         self.statementItem = statementItem
     }
 
-    override func start() {
-        let viewController = StatementItemDetailViewController.initFromStoryboard(name: Storyboards.statementDetail)
+    func createFlow() -> UIViewController {
+        let vc = StatementItemDetailViewController.initFromStoryboard(name: Storyboards.statementDetail)
         let viewModel = StatementItemDetailViewModel(coordinator: self, statementItem: statementItem)
-        viewController.viewModel = viewModel
-    
-        rootViewController.present(UINavigationController(rootViewController: viewController), animated: true, completion: nil)
+        vc.viewModel = viewModel
+        rootViewController = UINavigationController(rootViewController: vc)
+        return rootViewController
     }
 
     func closeController() {

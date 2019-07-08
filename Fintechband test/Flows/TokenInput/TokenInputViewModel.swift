@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import Foundation
 
 class TokenInputViewModel {
 
@@ -44,14 +45,14 @@ extension TokenInputViewModel {
                         onNext: { [weak self] client in
                             Session.sharedInstance.saveToken(token, client)
                             self?.loadInProgress.accept(false)
-                            self?.coordinator.showTransactions()
+                            self?.coordinator.showStatementList()
                         },
                         onError: { [weak self] error in
                             self?.loadInProgress.accept(false)
                             let errorMessage = (error as? ApiServiceFailureReason)?.getErrorMessage() ?? "Could not connect to server. Check your network and try again later."
                             let okAlert = SingleButtonAlert(title: "Error",
                                     message: errorMessage,
-                                    action: AlertAction(buttonTitle: "OK", handler: { print("Ok pressed!") })
+                                    action: AlertAction(buttonTitle: NSLocalizedString("button.ok", comment: ""), handler: { print("Go pressed!") })
                             )
                             self?.onShowError.onNext(okAlert)
                         }

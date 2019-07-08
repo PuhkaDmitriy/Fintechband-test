@@ -8,30 +8,23 @@
 
 import UIKit
 
-class TokenInputCoordinator: Coordinator {
+class TokenInputCoordinator {
 
     // MARK: - Properties
-    let window: UIWindow?
-    var rootViewController: UINavigationController!
     
-    // MARK: - Coordinator
-    init(window: UIWindow?) {
-        self.window = window
-    }
+    var rootViewController: UIViewController!
     
-    override func start() {
-        
-        let viewController = TokenInputViewController.initFromStoryboard(name: Storyboards.tokenInput)
+    func createFlow() -> UIViewController {
+        let vc = TokenInputViewController.initFromStoryboard(name: Storyboards.tokenInput)
         let viewModel = TokenInputViewModel(coordinator: self)
-        viewController.viewModel = viewModel
+        vc.viewModel = viewModel
+        rootViewController = vc
         
-        self.rootViewController = UINavigationController(rootViewController: viewController)
-        
-        window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible()
+        return rootViewController
     }
     
-        func showTransactions() {
-            StatementListCoordinator(rootViewController: rootViewController).start()
+        func showStatementList() {
+            let vc = StatementListCoordinator().createFlow()
+            rootViewController.present(vc, animated: true, completion: nil)
         }
 }

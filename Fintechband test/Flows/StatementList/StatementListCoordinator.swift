@@ -8,23 +8,19 @@
 
 import UIKit
 
-class StatementListCoordinator: Coordinator {
+class StatementListCoordinator {
 
-    private let rootViewController: UINavigationController
-    
-    init(rootViewController: UINavigationController) {
-        self.rootViewController = rootViewController
-    }
+    var rootViewController: UIViewController!
 
-    override func start() {
-        let viewController = StatementListViewController.initFromStoryboard(name: Storyboards.statementList)
-        viewController.viewModel = StatementListViewModel(coordinator: self)
-       
-        self.rootViewController.pushViewController(viewController, animated: true)
+    func createFlow() -> UIViewController {
+        let vc = StatementListViewController.initFromStoryboard(name: Storyboards.statementList)
+        vc.viewModel = StatementListViewModel(coordinator: self)
+        rootViewController = UINavigationController(rootViewController: vc)
+        return rootViewController
     }
 
     func navigateToDetails(_ statementItem: StatementItem) {
-        StatementItemDetailCoordinator(rootViewController: rootViewController,
-                statementItem: statementItem).start()
+        let vc = StatementItemDetailCoordinator(statementItem: statementItem).createFlow()
+        rootViewController.present(vc, animated: true)
     }
 }

@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appCoordinator: TokenInputCoordinator!
+    var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupCoordinator()
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setupCoordinator() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        appCoordinator = TokenInputCoordinator(window: window)
+        appCoordinator = AppCoordinator(window: window!)
         appCoordinator.start()
     }
 }
