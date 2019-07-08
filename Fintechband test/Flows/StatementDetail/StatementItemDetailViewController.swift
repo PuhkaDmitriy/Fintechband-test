@@ -18,7 +18,7 @@ final class StatementItemDetailViewController: BaseViewController, StoryboardIni
     // MARK - properties
     
     private let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
-    
+
     var viewModel: StatementItemDetailViewModel!
     var disposeBag = DisposeBag()
 

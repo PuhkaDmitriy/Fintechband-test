@@ -12,14 +12,19 @@ final class Session {
     
     static let sharedInstance = Session()
 
-    var token: String = ""
+    var token: String?
     var client: Client?
 
     private init() {}
 
-    func saveToken(_ token: String, _ client: Client) {
+    func saveToken(_ token: String?, _ client: Client) {
         self.token = token
         self.client = client
+    }
+
+    func clear() {
+        self.token = nil
+        self.client = nil
     }
     
 }

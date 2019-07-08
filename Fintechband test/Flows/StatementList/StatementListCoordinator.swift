@@ -23,4 +23,13 @@ class StatementListCoordinator {
         let vc = StatementItemDetailCoordinator(statementItem: statementItem).createFlow()
         rootViewController.present(vc, animated: true)
     }
+
+    func navigateToTokenInput() {
+
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            Session.sharedInstance.clear()
+            appDelegate.appCoordinator.start()
+        }
+
+    }
 }

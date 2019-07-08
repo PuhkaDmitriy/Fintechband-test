@@ -6,25 +6,27 @@
 //  Copyright © 2019 UPTech Team. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 import RxSwift
 import RxCocoa
 
 enum ApiServiceFailureReason: Int, Error {
-    case unAuthorized = 401,
-         forbidden = 403,
+    case forbidden = 403,
+         toManyRequests = 429,
          notFound = 404
 }
 
 extension ApiServiceFailureReason {
     func getErrorMessage() -> String? {
         switch self {
-        case .unAuthorized:
-            return "Please login to update friends friends."
-        case .notFound:
-            return "Failed to update friend. Please try again."
         case .forbidden:
-            return "Access forbidden"
+            return NSLocalizedString("error.accessForbidden", comment: "")
+        case .toManyRequests:
+            return NSLocalizedString("error.toManyRequests", comment: "")
+        case .notFound:
+            return NSLocalizedString("error.notFound", comment: "")
+
         }
     }
 }
@@ -101,7 +103,7 @@ class ApiService {
 
 extension ApiService {
 
-    private func makeRequest(withToken: String = Session.sharedInstance.token,
+    private func makeRequest(withToken: String = Session.sharedInstance.token ?? "",
                              andPath: String) -> DataRequest {
         let headers: HTTPHeaders = [API.xToken : withToken]
         return  Alamofire.request(String(format: "%@%@", API.endpoint, andPath), headers: headers)

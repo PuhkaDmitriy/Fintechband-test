@@ -27,3 +27,8 @@
 "statementDetail.hold" = "Hold";
 "hold.true" = "True";
 "hold.false" = "False";
+"button.logout" = "Logout";
+
+"error.toManyRequests" = "To many requests";
+"error.accessForbidden" = "Access forbidden";
+"error.notFound" = "Not found";

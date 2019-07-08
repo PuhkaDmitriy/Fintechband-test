@@ -20,20 +20,21 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
     @IBOutlet weak var balanceValueLabel: UILabel!
     @IBOutlet weak var creditLimitLabel: UILabel!
     @IBOutlet weak var creditLimitValueLabel: UILabel!
-
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK - properties
 
+    private let logoutButton = UIButton()
     var viewModel: StatementListViewModel!
     private let disposeBag = DisposeBag()
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
+
         setupUI()
-        viewModel.getStatement()
         bindViewModel()
         setupCellTapHandling()
+        viewModel.getStatement()
     }
 
     func setupUI() {
@@ -58,9 +59,19 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
                 print(client)
             }).disposed(by: disposeBag)
         }
+
+        // logout button
+        logoutButton.setTitle(NSLocalizedString("button.logout", comment: ""), for: .normal)
+        logoutButton.setTitleColor(.blue, for: .normal)
+        logoutButton.sizeToFit()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logoutButton)
     }
 
     func bindViewModel() {
+
+        logoutButton.rx.tap.subscribe(onNext: { [unowned self] (_ : Void) in
+            self.viewModel.coordinator.navigateToTokenInput()
+        }).disposed(by: disposeBag)
 
         self.tableView.dataSource = nil
         self.tableView.delegate = nil
