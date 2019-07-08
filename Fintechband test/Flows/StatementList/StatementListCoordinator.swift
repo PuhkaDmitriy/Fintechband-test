@@ -10,7 +10,7 @@ import UIKit
 
 class StatementListCoordinator {
 
-    var rootViewController: UIViewController!
+    private unowned var rootViewController: UIViewController!
 
     func createFlow() -> UIViewController {
         let vc = StatementListViewController.initFromStoryboard(name: Storyboards.statementList)

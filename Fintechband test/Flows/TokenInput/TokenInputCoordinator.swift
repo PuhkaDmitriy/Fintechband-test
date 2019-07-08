@@ -11,8 +11,8 @@ import UIKit
 class TokenInputCoordinator {
 
     // MARK: - Properties
-    
-    var rootViewController: UIViewController!
+
+    private unowned var rootViewController: UIViewController!
     
     func createFlow() -> UIViewController {
         let vc = TokenInputViewController.initFromStoryboard(name: Storyboards.tokenInput)

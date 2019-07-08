@@ -40,6 +40,7 @@ class StatementListViewModel {
     }
 
     func getStatement() {
+
         loadInProgress.accept(true)
 
         apiService

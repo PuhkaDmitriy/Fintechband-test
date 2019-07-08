@@ -12,7 +12,8 @@ import RxSwift
 class StatementItemDetailCoordinator {
 
     let statementItem: StatementItem
-    var rootViewController: UIViewController!
+
+    private unowned var rootViewController: UIViewController!
 
     init(statementItem: StatementItem) {
         self.statementItem = statementItem
