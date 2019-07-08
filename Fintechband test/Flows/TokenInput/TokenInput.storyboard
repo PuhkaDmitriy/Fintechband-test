@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Token Input View Controller-->
+        <scene sceneID="xvy-zE-RRa">
+            <objects>
+                <viewController storyboardIdentifier="TokenInputViewController" id="PLh-jR-emS" customClass="TokenInputViewController" customModule="Fintechband_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FRJ-jW-zbY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MYX-1q-1aH">
+                                <rect key="frame" x="10" y="433" width="394" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-60-9LH">
+                                <rect key="frame" x="157" y="488" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="h6T-Pf-Zb0"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EsT-9D-UOg" firstAttribute="trailing" secondItem="MYX-1q-1aH" secondAttribute="trailing" constant="10" id="0is-Aw-3B6"/>
+                            <constraint firstItem="MYX-1q-1aH" firstAttribute="centerX" secondItem="FRJ-jW-zbY" secondAttribute="centerX" id="7II-Qf-r1O"/>
+                            <constraint firstItem="PSg-60-9LH" firstAttribute="top" secondItem="MYX-1q-1aH" secondAttribute="bottom" constant="25" id="TV8-hS-hOA"/>
+                            <constraint firstItem="MYX-1q-1aH" firstAttribute="centerY" secondItem="FRJ-jW-zbY" secondAttribute="centerY" id="qjc-hp-kh9"/>
+                            <constraint firstItem="PSg-60-9LH" firstAttribute="centerX" secondItem="FRJ-jW-zbY" secondAttribute="centerX" id="vTh-YY-1NO"/>
+                            <constraint firstItem="MYX-1q-1aH" firstAttribute="leading" secondItem="EsT-9D-UOg" secondAttribute="leading" constant="10" id="yrb-jv-UZq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EsT-9D-UOg"/>
+                    </view>
+                    <connections>
+                        <outlet property="sendButton" destination="PSg-60-9LH" id="vHX-9Z-sxM"/>
+                        <outlet property="tokenTextField" destination="MYX-1q-1aH" id="51c-p7-6oM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jtb-1y-P63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="111"/>
+        </scene>
+    </scenes>
+</document>
