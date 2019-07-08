@@ -16,7 +16,7 @@ final class StatementItemDetailViewController: BaseViewController, StoryboardIni
     @IBOutlet private weak var tableView: UITableView!
     
     // MARK - properties
-    
+
     private let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
 
     var viewModel: StatementItemDetailViewModel!
@@ -37,15 +37,14 @@ final class StatementItemDetailViewController: BaseViewController, StoryboardIni
     }
 
     func createViewModelBinding() {
-
         cancelButton.rx.tap.subscribe(onNext: { [unowned self] (_ : Void) in
                     self.viewModel.coordinator.closeController()
                 }).disposed(by: disposeBag)
-        
-    
+
+
         self.tableView.dataSource = nil
         self.tableView.delegate = nil
-        
+
         viewModel.detailItems.bind(to: tableView.rx.items(cellIdentifier: CellIdentifiers.statementDetailTableViewCell)) { row, model, cell in
             (cell as? StatementDetailTableViewCell)?.viewModel = model
             }.disposed(by: disposeBag)

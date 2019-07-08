@@ -27,10 +27,8 @@ final class TokenInputViewController: BaseViewController, StoryboardInitializabl
     func setupUI() {
         tokenTextField.placeholder = NSLocalizedString("placeholder.token", comment: "")
         sendButton.setTitle(NSLocalizedString("button.go", comment: ""), for: .normal)
-        
-        tokenTextField.text = "uP8PZfQdOADDUVhctCYFPjan3agdSiF08njYOcnrURyY" // TODO - удалить
     }
-    
+
     func createViewModelBinding() {
 
         tokenTextField.rx.text.orEmpty
@@ -57,7 +55,7 @@ final class TokenInputViewController: BaseViewController, StoryboardInitializabl
                 .subscribe()
                 .disposed(by: disposeBag)
     }
-    
+
     deinit {
         debugPrint("[\(String(describing: type(of: self)))] - deinit -")
     }
