@@ -15,3 +15,15 @@
 "title.creditLimit" = "Credit limit";
 "title.noDataAvailable" = "No data available";
 
+"statementDetail.id" = "ID";
+"statementDetail.time" = "Time";
+"statementDetail.description" = "Description";
+"statementDetail.amount" = "Amount";
+"statementDetail.operationAmount" = "Amount";
+"statementDetail.currency" = "Currency";
+"statementDetail.commissionRate" = "Commission rate";
+"statementDetail.cashbackAmount" = "Cashback amount";
+"statementDetail.balance" = "Balance";
+"statementDetail.hold" = "Hold";
+"hold.true" = "True";
+"hold.false" = "False";

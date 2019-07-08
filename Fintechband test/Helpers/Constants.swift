@@ -24,3 +24,6 @@ struct CellIdentifier {
     static let statementCellIdentifier = "StatementTableViewCell"
 }
 
+struct CellIdentifiers {
+    static let statementDetailTableViewCell = "StatementDetailTableViewCell"
+}

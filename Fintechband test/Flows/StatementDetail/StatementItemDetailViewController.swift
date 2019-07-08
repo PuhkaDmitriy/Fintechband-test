@@ -11,6 +11,12 @@ import RxCocoa
 
 final class StatementItemDetailViewController: BaseViewController, StoryboardInitializable {
 
+     // MARK: - outlets
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
+    // MARK - properties
+    
     private let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
     
     var viewModel: StatementItemDetailViewModel!
@@ -21,6 +27,8 @@ final class StatementItemDetailViewController: BaseViewController, StoryboardIni
 
         setupUI()
         createViewModelBinding()
+    
+        viewModel.initDetails()
     }
     
     func setupUI() {
@@ -33,6 +41,14 @@ final class StatementItemDetailViewController: BaseViewController, StoryboardIni
         cancelButton.rx.tap.subscribe(onNext: { [unowned self] (_ : Void) in
                     self.viewModel.coordinator.closeController()
                 }).disposed(by: disposeBag)
+        
+    
+        self.tableView.dataSource = nil
+        self.tableView.delegate = nil
+        
+        viewModel.detailItems.bind(to: tableView.rx.items(cellIdentifier: CellIdentifiers.statementDetailTableViewCell)) { row, model, cell in
+            (cell as? StatementDetailTableViewCell)?.viewModel = model
+            }.disposed(by: disposeBag)
     }
 
     deinit {

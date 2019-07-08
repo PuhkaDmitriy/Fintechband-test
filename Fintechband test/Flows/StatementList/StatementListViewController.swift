@@ -28,8 +28,6 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
     var viewModel: StatementListViewModel!
     private let disposeBag = DisposeBag()
 
-    private var selectStatementPayload = ReadOnce<StatementCellViewModel>(nil)
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupUI()
@@ -42,7 +40,7 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
 
         balanceLabel.text = NSLocalizedString("title.balance", comment: "")
         creditLimitLabel.text = NSLocalizedString("title.creditLimit", comment: "")
-        
+
         if let client = Session.sharedInstance.client {
             let observable = Observable.just(client)
             let _ = observable.subscribe (onNext:{ [weak self] client in
@@ -50,11 +48,11 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
                 self?.usernameLabel.text = client.name
 
                 if let balance = client.accounts.first?.balance {
-                    self?.balanceValueLabel.text = String(balance)
+                    self?.balanceValueLabel.text = balance.amountFormatToString()
                 }
 
                 if let creditLimit = client.accounts.first?.creditLimit {
-                    self?.creditLimitValueLabel.text = String(creditLimit)
+                    self?.creditLimitValueLabel.text = creditLimit.amountFormatToString()
                 }
 
                 print(client)

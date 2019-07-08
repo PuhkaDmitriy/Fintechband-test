@@ -17,6 +17,6 @@ extension StatementCellViewModel {
     init(statementItem: StatementItem) {
         self.statementItem = statementItem
         self.name = statementItem.description
-        self.amount = String(statementItem.amount)
+        self.amount = statementItem.amount.amountFormatToString()
     }
 }

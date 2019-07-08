@@ -12,12 +12,19 @@ import RxCocoa
 class StatementItemDetailViewModel {
 
     // MARK: - Inputs
+    
     let statementItem: StatementItem
     var coordinator: StatementItemDetailCoordinator
+    
+    let detailItems: BehaviorRelay<[StatementItem.TitleValue]> = BehaviorRelay(value: [])
     
     init(coordinator: StatementItemDetailCoordinator, statementItem: StatementItem) {
         self.coordinator = coordinator
         self.statementItem = statementItem
+    }
+    
+    func initDetails() {
+        self.detailItems.accept(statementItem.keyValueList())
     }
 
 }

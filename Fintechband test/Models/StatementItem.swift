@@ -6,6 +6,8 @@
 //  Copyright © 2019 UPTech Team. All rights reserved.
 //
 
+import Foundation
+
 struct StatementItem: Codable {
     let id: String
     let time: Double
@@ -18,22 +20,4 @@ struct StatementItem: Codable {
     let commissionRate: Double
     let cashbackAmount: Double
     let balance: Double
-}
-
-extension StatementItem {
-
-    struct TitleValue {
-
-        let title: String
-        let value: String
-
-        init(title: String, value: String) {
-            self.title = title
-            self.value = value
-        }
-    }
-
-    func keyValueList() -> [TitleValue] {
-        return [TitleValue(title: "", value: "")]
-    }
 }
