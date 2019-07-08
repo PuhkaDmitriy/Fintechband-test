@@ -37,6 +37,7 @@
 		6CF6C03622D35B0500116DE9 /* StatementItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C03322D35B0500116DE9 /* StatementItemDetailViewModel.swift */; };
 		6CF6C03722D35B0500116DE9 /* StatementItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C03422D35B0500116DE9 /* StatementItemDetailViewController.swift */; };
 		6CF6C03822D35B0500116DE9 /* StatementItemDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6C03522D35B0500116DE9 /* StatementItemDetailCoordinator.swift */; };
+		6CF6C03D22D377E500116DE9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CF6C03F22D377E500116DE9 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		6CF6C03322D35B0500116DE9 /* StatementItemDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementItemDetailViewModel.swift; sourceTree = "<group>"; };
 		6CF6C03422D35B0500116DE9 /* StatementItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementItemDetailViewController.swift; sourceTree = "<group>"; };
 		6CF6C03522D35B0500116DE9 /* StatementItemDetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementItemDetailCoordinator.swift; sourceTree = "<group>"; };
+		6CF6C03E22D377E500116DE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8E1C2F4BA3DD44EEAE835B73 /* Pods-Fintechband test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fintechband test.release.xcconfig"; path = "Target Support Files/Pods-Fintechband test/Pods-Fintechband test.release.xcconfig"; sourceTree = "<group>"; };
 		D692EDC8DCCD1B2159B6663A /* Pods-Fintechband test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fintechband test.debug.xcconfig"; path = "Target Support Files/Pods-Fintechband test/Pods-Fintechband test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 			children = (
 				6CF6BFEE22D33B3800116DE9 /* Assets.xcassets */,
 				6CF6BFFC22D3445000116DE9 /* Storyboards */,
+				6CF6C03F22D377E500116DE9 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				6CF6C00622D346CD00116DE9 /* StatementDetail.storyboard in Resources */,
 				6CF6BFF222D33B3800116DE9 /* LaunchScreen.storyboard in Resources */,
 				6CF6C00422D346BB00116DE9 /* TokenInput.storyboard in Resources */,
+				6CF6C03D22D377E500116DE9 /* Localizable.strings in Resources */,
 				6CF6BFEF22D33B3800116DE9 /* Assets.xcassets in Resources */,
 				6CF6C00822D346D800116DE9 /* StatementList.storyboard in Resources */,
 				6CF6BFED22D33B3700116DE9 /* Main.storyboard in Resources */,
@@ -417,6 +421,14 @@
 				6CF6BFF122D33B3800116DE9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6CF6C03F22D377E500116DE9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CF6C03E22D377E500116DE9 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

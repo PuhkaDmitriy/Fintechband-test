@@ -19,12 +19,17 @@ final class TokenInputViewController: BaseViewController, StoryboardInitializabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tokenTextField.text = "uP8PZfQdOADDUVhctCYFPjan3agdSiF08njYOcnrURyY"
-
+        setupUI()
         createViewModelBinding()
     }
 
+    func setupUI() {
+        tokenTextField.placeholder = NSLocalizedString("placeholder.token", comment: "")
+        sendButton.setTitle(NSLocalizedString("button.go", comment: ""), for: .normal)
+        
+        tokenTextField.text = "uP8PZfQdOADDUVhctCYFPjan3agdSiF08njYOcnrURyY" // TODO - удалить
+    }
+    
     func createViewModelBinding() {
 
         tokenTextField.rx.text.orEmpty

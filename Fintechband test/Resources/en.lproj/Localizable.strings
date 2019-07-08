@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Fintechband test
+
+  Created by Дмитрий Пучка on 7/8/19.
+  Copyright © 2019 Дмитрий Пучка. All rights reserved.
+*/
+
+"placeholder.token" = "token";
+
+"button.ok" = "Ok";
+"button.go" = "Go";
+
+"title.balance" = "Balance";
+"title.creditLimit" = "Credit limit";
+"title.noDataAvailable" = "No data available";
+

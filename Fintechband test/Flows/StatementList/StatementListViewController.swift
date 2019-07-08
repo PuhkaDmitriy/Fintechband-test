@@ -40,9 +40,9 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
 
     func setupUI() {
 
-        balanceLabel.text = "Balance"
-        creditLimitLabel.text = "Credit limit"
-
+        balanceLabel.text = NSLocalizedString("title.balance", comment: "")
+        creditLimitLabel.text = NSLocalizedString("title.creditLimit", comment: "")
+        
         if let client = Session.sharedInstance.client {
             let observable = Observable.just(client)
             let _ = observable.subscribe (onNext:{ [weak self] client in
@@ -84,7 +84,7 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
             case .empty:
                 let cell = UITableViewCell()
                 cell.isUserInteractionEnabled = false
-                cell.textLabel?.text = "No data available"
+                cell.textLabel?.text = NSLocalizedString("title.noDataAvailable", comment: "")
                 return cell
             }
         }.disposed(by: disposeBag)

@@ -8,7 +8,7 @@
 
 struct StatementItem: Codable {
     let id: String
-    let time: Int
+    let time: Double
     let description: String
     let mcc: Int
     let hold: Bool
@@ -18,4 +18,22 @@ struct StatementItem: Codable {
     let commissionRate: Double
     let cashbackAmount: Double
     let balance: Double
+}
+
+extension StatementItem {
+
+    struct TitleValue {
+
+        let title: String
+        let value: String
+
+        init(title: String, value: String) {
+            self.title = title
+            self.value = value
+        }
+    }
+
+    func keyValueList() -> [TitleValue] {
+        return [TitleValue(title: "", value: "")]
+    }
 }
