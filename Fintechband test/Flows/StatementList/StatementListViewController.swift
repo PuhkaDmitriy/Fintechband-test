@@ -28,8 +28,8 @@ final class StatementListViewController: BaseViewController, StoryboardInitializ
     var viewModel: StatementListViewModel!
     private let disposeBag = DisposeBag()
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         setupUI()
         bindViewModel()

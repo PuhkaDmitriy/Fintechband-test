@@ -19,6 +19,7 @@ final class TokenInputViewController: BaseViewController, StoryboardInitializabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupUI()
         createViewModelBinding()
     }
