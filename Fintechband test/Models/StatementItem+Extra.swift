@@ -25,7 +25,7 @@ extension StatementItem {
     
     func keyValueList() -> [TitleValue] {
         
-        let currencyName = Currencyes(rawValue: currencyCode)?.description() ?? "unknown"
+        let currencyName = Currencies(rawValue: currencyCode)?.description() ?? "unknown"
         
        let items = [TitleValue(title: NSLocalizedString("statementDetail.id", comment: ""), value: id),
                                               TitleValue(title: NSLocalizedString("statementDetail.time", comment: ""), value: time.unixTimeToString()),

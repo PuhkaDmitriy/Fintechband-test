@@ -7,6 +7,7 @@ target 'Fintechband test' do
     pod 'RxCocoa'
     pod 'Alamofire'
     pod 'PKHUD', '~> 5.0'
-    pod 'RxDataSources' 
+    pod 'RxDataSources'
+    pod 'IQKeyboardManagerSwift', '= 6.1.1'
 
 end

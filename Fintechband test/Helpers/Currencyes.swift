@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum Currencyes: Int {
+enum Currencies: Int {
     case UAH = 980,
          USD = 840,
          EUR = 978,
          GBP = 826
 }
 
-extension Currencyes {
+extension Currencies {
     
     func description() -> String {
         switch self {
